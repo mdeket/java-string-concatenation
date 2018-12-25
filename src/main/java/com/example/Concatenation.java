@@ -2,12 +2,13 @@ package com.example;
 
 import org.openjdk.jmh.annotations.*;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 @State(Scope.Benchmark)
 public class Concatenation {
 
-    private final String[] words = new String[]{"V", "e", "g", "a", " ", "I", "T", " ", "S", "o", "u", "r", "c", "i", "n", "g"};
+    private final String[] letters = "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu".split("(?!^)");
 
     @Benchmark
     @BenchmarkMode(Mode.AverageTime)
@@ -17,8 +18,8 @@ public class Concatenation {
     @Fork(1)
     public String concatenate() {
         String result = "";
-        for (String word : words) {
-            result += word;
+        for (String letter : letters) {
+            result += letter;
         }
         return result;
     }
@@ -31,8 +32,8 @@ public class Concatenation {
     @Fork(1)
     public String concatenateWithStringBuilder() {
         StringBuilder builder = new StringBuilder();
-        for (String word : words) {
-            builder.append(word);
+        for (String letter : letters) {
+            builder.append(letter);
         }
         return builder.toString();
     }
