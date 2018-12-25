@@ -1,8 +1,6 @@
 package com.example;
 
 import org.openjdk.jmh.annotations.*;
-
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 @State(Scope.Benchmark)
