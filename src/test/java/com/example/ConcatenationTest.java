@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ConcatenationTest {
 
-    private final String testString = "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu";
+    private final String testString = "Vega IT Sourcing";
     private final String[] letters = testString.split("(?!^)");
 
     @Test
@@ -24,15 +24,15 @@ public class ConcatenationTest {
     }
 
     @Test
-    public void concatenateResultEqualsToTestString() {
+    public void concatenateEqualsToTestString() {
         Concatenation concatenation = new Concatenation();
         assertEquals(concatenation.concatenate(), testString);
     }
 
     @Test
-    public void concatenateWithStringBuilderResultEqualsToTestString() {
+    public void concatenateWithStringBuilderEqualsToTestString() {
         Concatenation concatenation = new Concatenation();
-        assertEquals(concatenation.concatenate(), testString);
+        assertEquals(concatenation.concatenateWithStringBuilder(), testString);
     }
 
 }

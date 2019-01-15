@@ -7,11 +7,11 @@ import java.util.concurrent.TimeUnit;
 @BenchmarkMode(Mode.SingleShotTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @Warmup(iterations = 4, batchSize = 100)
-@Measurement(iterations = 6, batchSize = 100)
+@Measurement(iterations = 8, batchSize = 200)
 @Fork(6)
 public class Concatenation {
 
-    private final String[] letters = "Taumatawhakatangihangakoauauotamateaturipukakapikimaungahoronukupokaiwhenuakitanatahu".split("(?!^)");
+    private final String[] letters = "Vega IT Sourcing".split("(?!^)");
 
     @Benchmark
     public String concatenate() {
